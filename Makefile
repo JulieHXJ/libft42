@@ -18,9 +18,13 @@ SRCS := ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c 
 
 SRCOBJ := $(SRCS:%.c=%.o) 
 
+BONUS := ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
+BONUS_OBJ := $(BONUS:%.c=%.o) 
+
 # rules
 
-.PHONY: all clean fclean re bonus # 
+.PHONY: all clean fclean re bonus bonus
 
 all:	$(NAME)
 
@@ -32,7 +36,7 @@ $(NAME):	$(SRCOBJ)
 	@$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@ 
 
 clean:	
-	$(RM) $(SRCOBJ) 
+	$(RM) $(SRCOBJ) $(BONUS_OBJ)
 	@echo "Object files have been deleted."
 
 fclean: clean
@@ -41,4 +45,5 @@ fclean: clean
 
 re: fclean all 
 
-bonus: 
+bonus:	$(SRCOBJ) $(BONUS_OBJ)
+	ar rcs $(NAME) $(SRCOBJ) $(BONUS_OBJ)
