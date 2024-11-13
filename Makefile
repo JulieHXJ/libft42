@@ -40,3 +40,5 @@ fclean: clean
 	@echo "Library has been deleted."
 
 re: fclean all 
+
+bonus: 
