@@ -24,7 +24,7 @@ BONUS_OBJ := $(BONUS:%.c=%.o)
 
 # rules
 
-.PHONY: all clean fclean re bonus bonus
+.PHONY: all clean fclean re bonus
 
 all:	$(NAME)
 
@@ -47,3 +47,8 @@ re: fclean all
 
 bonus:	$(SRCOBJ) $(BONUS_OBJ)
 	ar rcs $(NAME) $(SRCOBJ) $(BONUS_OBJ)
+
+# bonus: $(BONUS_OBJ)
+# 	ar rcs $(NAME) $(SRCOBJ) $(BONUS_OBJ)
+# 	@echo "Bonus part has been added to $(NAME)."
+

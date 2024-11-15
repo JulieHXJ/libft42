@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junjun <junjun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xhuang <xhuang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 23:13:16 by junjun            #+#    #+#             */
-/*   Updated: 2024/11/12 23:23:49 by junjun           ###   ########.fr       */
+/*   Updated: 2024/11/15 15:36:07 by xhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list *temp;
 	if (!lst ||!f)
 	{
 		return ;
