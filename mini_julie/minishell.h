@@ -6,7 +6,7 @@
 /*   By: xhuang <xhuang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 17:01:39 by xhuang            #+#    #+#             */
-/*   Updated: 2025/01/21 18:11:43 by xhuang           ###   ########.fr       */
+/*   Updated: 2025/01/21 18:13:45 by xhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ typedef struct s_redir
 typedef struct s_shell
 {
 	char			*cmdline;
-	t_tree		    *astree;
+	t_tree			*astree;
 	t_token			*token_lst;
 	pid_t			pid;
 	char			**envp;
@@ -85,7 +85,7 @@ typedef enum e_token_type
 
 // ---------------------Initialization--------------------
 bool				shell_init(t_shell *mini, char **envp);
-void reset_shell(t_shell *mini);
+void				reset_shell(t_shell *mini);
 // init_envp
 // init_dir
 // init_cmd
@@ -93,7 +93,7 @@ void reset_shell(t_shell *mini);
 
 // -------------------------Parsing------------------------
 t_token				*tokenize_input(const char *cmdline);
-t_tree			*token_to_tree(t_token *tokens);
+t_tree				*token_to_tree(t_token *tokens);
 void				expand_tokens(t_token *tokens, char **envp);
 void				expand_variable(t_token *token, char **envp);
 
@@ -114,7 +114,7 @@ void				reset_signals(void);
 
 // ----------------------Error and free--------------------
 void				free_shell(t_shell *shell);
-void free_ptr(char *s);
+void				free_ptr(char *s);
 void				print_error(const char *msg);
 void				handle_syntax_error(const char *token);
 
